@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="48092" started-at="2020-12-04T18:36:20 IST" finished-at="2020-12-04T18:37:08 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="48092" started-at="2020-12-04T18:36:20 IST" finished-at="2020-12-04T18:37:08 IST">
+      <class name="com.ebanking.master.Grid">
+        <test-method status="PASS" signature="gd()[pri:0, instance:com.ebanking.master.Grid@3a5ed7a6]" name="gd" duration-ms="47918" started-at="2020-12-04T18:36:20 IST" finished-at="2020-12-04T18:37:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gd -->
+      </class> <!-- com.ebanking.master.Grid -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

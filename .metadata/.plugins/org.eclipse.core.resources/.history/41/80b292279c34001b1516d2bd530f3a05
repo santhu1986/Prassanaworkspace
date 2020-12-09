@@ -1,0 +1,68 @@
+package com.ebanking.master;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class Exepom 
+{
+	
+	
+	WebDriver driver;
+	
+    @BeforeTest
+	public void login() throws InterruptedException 
+	{
+	driver=new FirefoxDriver();
+	driver.get("http://122.175.8.158/ranford2");
+	driver.manage().window().maximize();
+	
+	//pagefactory
+	
+	RanfordHP RHP=PageFactory.initElements(driver,RanfordHP.class);
+	RHP.login();
+	}
+    @Test(dataProvider="Rdata")
+    public void RCret(String Rn,String Rt) throws InterruptedException 
+    {
+    	
+	Thread.sleep(3000);
+	AdminHP AHP=PageFactory.initElements(driver,AdminHP.class);
+	AHP.Rol();
+	Thread.sleep(3000);
+	RoleDetails RD=PageFactory.initElements(driver,RoleDetails.class);
+	RD.Nrole();
+	RoleCreation RC=PageFactory.initElements(driver,RoleCreation.class);
+	RC.Rcre(Rn,Rt);
+	
+	Thread.sleep(3000);
+	
+	driver.switchTo().alert().accept();
+	Thread.sleep(3000);
+	RD.Hom();
+	
+    }
+    
+    @DataProvider
+	public Object [][] Rdata()
+	{
+		
+		Object[][] Obj=new Object[3][2];
+		
+		Obj[0][0]="managerAB";
+		Obj[0][1]="E";
+		
+		Obj[1][0]="managerCT";
+		Obj[1][1]="E";
+		
+		Obj[2][0]="managerIcic";
+		Obj[2][1]="E";
+		
+		return Obj;
+		
+	}
+    
+}

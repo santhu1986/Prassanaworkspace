@@ -1,0 +1,4 @@
+RoleName###RoleType###Results
+managerBOB###E
+managerBK###E
+managerBOM###E
